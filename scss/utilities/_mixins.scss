@@ -1,0 +1,22 @@
+// Center containers
+@mixin center($w) {
+  width: $w;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin button-styling ($color) {
+  height: 2.5em;
+  background-color: $color;
+  color: $color-secondary;
+  border-radius: 7px;
+  border-style: none;
+}
+@mixin gridcol-styling ($color) {
+  height: 1em;
+  background-color: $color;
+  color: $color-primary;
+  border-radius: 7px;
+  border-style: none;
+}

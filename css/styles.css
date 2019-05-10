@@ -1,0 +1,19 @@
+/* Error: Undefined variable.
+ *    ,
+ * 42 |          @include gridcol-styling($color-gridcol-#{$i});
+ *    |                                   ^^^^^^^^^^^^^^^
+ *    '
+ *   scss\components\_grid.scss 42:35  @import
+ *   scss\components\_index.scss 7:9   @import
+ *   scss\styles.scss 15:9             root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined variable.\a    \2577 \a 42 \2502           @include gridcol-styling($color-gridcol-#{$i});\a    \2502                                    ^^^^^^^^^^^^^^^\a    \2575 \a   scss\\components\\_grid.scss 42:35  @import\a   scss\\components\\_index.scss 7:9   @import\a   scss\\styles.scss 15:9             root stylesheet";
+}

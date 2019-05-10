@@ -1,0 +1,17 @@
+.card {
+  text-align: left;
+ .blockquote {
+  border-left: solid 6px $color-marine;
+  padding-left: 10px;
+  border-radius: 7px;
+}
+}
+
+.headline--secondary {
+  text-align: left;
+  font-weight: lighter;
+}
+.headline--primary {
+  color:$color-marine;
+  margin-left: 5%;
+}
