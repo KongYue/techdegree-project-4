@@ -12,14 +12,11 @@
 
   // .grid__row
   &__row {
-    padding: 1em 10px;
-    display: flex;
-    flex-direction: column;
+
 
     // NOTE: replace with media query mixin if aiming for exceeds
-    @media (min-width: 768px) {
-      flex-direction: row;
-    }
+    @include flexcont('large');
+
   }
 
   // .grid__col
@@ -36,21 +33,10 @@
         // base styles applied to all grid columns
         // NOTE: could be converted to a placeholder, along with margin
         // from the  media query
-        margin-top: 10px;
-        flex-basis: 100%;
-         &.theme__colors{
-         @include gridcol-styling($color-gridcol-#{$i});
-        }
+
 
         // NOTE: replace with media query mixin if aiming for exceeds
-        @media (min-width: 768px) {
-
-          // base stlyes applied to all grid columns
-          margin-top: 0;
-
-          // make column width a percentage of the column number / total columns
-          flex-basis: #{$i / 12 * 100 + "%"} ;
-        }
+       @include flexcol('large',$i);
       }
     }
   }
@@ -62,10 +48,51 @@
   & + & {
 
     // NOTE: replace with media query mixin if aiming for exceeds
-    @media (min-width: 768px) {
+    @media (min-width: 480px) {
 
       // add grid gutter
       margin-left: 10px;
+    }
+  }
+}
+.grid__col--12.theme__colors {
+  @include gridcol-styling($color-gridcol-12);
+}
+.grid__col--6.theme__colors {
+  @include gridcol-styling($color-gridcol-6);
+}
+.grid__col--4.theme__colors {
+  @include gridcol-styling($color-gridcol-4);
+}
+.grid__col--3.theme__colors {
+   @include gridcol-styling($color-gridcol-3);
+}
+.grid__col--5.theme__colors {
+  @include gridcol-styling($color-gridcol-5);
+}
+.grid__col--7.theme__colors {
+  @include gridcol-styling($color-gridcol-7);
+}
+.grid__col--8.theme__colors {
+  @include gridcol-styling($color-gridcol-8);
+}
+.grid__col--4.theme__colors {
+  @include gridcol-styling($color-gridcol-4);
+}
+
+.centered {
+   margin: 0 auto;
+}
+
+
+.grid__col--12 {
+  display: flex;
+  flex-direction: column;
+  @media (min-width: 480px) {
+    flex-direction: row;
+    justify-content: space-around;
+    button {
+      @include flexbut(5);
     }
   }
 }

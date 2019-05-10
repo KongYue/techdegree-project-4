@@ -10,8 +10,15 @@
 .headline--secondary {
   text-align: left;
   font-weight: lighter;
+  margin: 0;
 }
 .headline--primary {
   color:$color-marine;
   margin-left: 5%;
+}
+.link {
+  color: $color-default;
+  &:hover {
+  color:  complement($color-default);
+}
 }
