@@ -1,7 +1,7 @@
 .nav {
   @include fbx-setting(column);
-  margin-left: 20%;
   @include mq (medium) {
+    margin-left: 20%;
     flex-direction: row;
   }
 }

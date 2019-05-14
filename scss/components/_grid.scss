@@ -5,7 +5,15 @@
 // major grid styles have been added here for you
 // but additional styling may be needed
 // **********************************************
-
+.container {
+  width: 90%;
+  margin: 0 auto;
+  color: $color-primary;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-family: $font-stack-primary;
+  text-align: center;
+}
 
 // grid base class
 .grid {

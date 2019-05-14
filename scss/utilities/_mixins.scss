@@ -29,11 +29,6 @@
       @content;
     }
   }
-  @else if $break == "large" {
-    @media (min-width: $break-l) {
-      @content;
-    }
-  }
   @else {
     @error "This is not a correct value #{$break}";
   }
