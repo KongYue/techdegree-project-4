@@ -1,11 +1,4 @@
-// Center containers
-@mixin center($w) {
-  width: $w;
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
+// give style to button
 @mixin button-styling ($color) {
   height: 2.5em;
   background-color: $color;
@@ -13,6 +6,8 @@
   border-radius: 7px;
   border-style: none;
 }
+
+//give color to grid column
 @mixin gridcol-styling ($color) {
   height: 2em;
   background-color: $color;
@@ -20,37 +15,33 @@
   border-radius: 7px;
   border-style: none;
 }
+
+
 // Media Queries
-@mixin flexcol($break,$i) {
-  margin-top: 10px;
-  flex-basis: 100%;
-  @if $break == 'large' {
-    @media (min-width: $break-m) {
-      // base stlyes applied to all grid columns
-      margin-top: 0;
-    //  flex-grow: 1;
-      // make column width a percentage of the column number / total columns
-      flex-basis: #{$i / 12 * 100 + "%"} ;
+@mixin mq($break) {
+  @if $break == "small" {
+    @media (min-width: $break-s) and (max-width: $break-m){
+      @content;
     }
   }
-
+  @else if $break == "medium" {
+    @media (min-width: $break-m + 1) {
+      @content;
+    }
+  }
+  @else if $break == "large" {
+    @media (min-width: $break-l) {
+      @content;
+    }
+  }
+  @else {
+    @error "This is not a correct value #{$break}";
+  }
 }
 
-@mixin flexbut($button-numbers){
-  margin-left: 10px;
-  flex-basis: #{1 / $button-numbers * 100 + "%"};
-}
 
-@mixin flexcont($break){
-  padding: 1em 10px;
+//Flexbox settings
+@mixin fbx-setting ($flex-d) {
   display: flex;
-  flex-direction: column;
-  @if $break == 'large' {
-    @media (min-width: $break-m) {
-      flex-direction: row;
-      justify-content: space-around;
-
-    }
-  }
-
+  flex-direction: $flex-d;
 }

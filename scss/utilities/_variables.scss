@@ -1,6 +1,9 @@
+// Google Fonts
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
 
-$font-stack-primary: Arial, Helvetica, sans-serif;
+$font-stack-primary: 'Ubuntu', sans-serif;
 $color-primary: black;
+$color-light-primary: darken(lightgrey,30%);
 $color-secondary: white;
 $color-marine: aquamarine;
 $color-default: LightSkyBlue;
@@ -23,5 +26,6 @@ $color-gridcol-10: white;
 $color-gridcol-11: white;
 $color-gridcol-12: #6FD6EB;
 
+$break-s: 1px;
 $break-m: 480px;
-$break-d: 1400px;
+$break-l: 1400px;

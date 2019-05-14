@@ -12,16 +12,16 @@
 
   // .grid__row
   &__row {
-
-
     // NOTE: replace with media query mixin if aiming for exceeds
-    @include flexcont('large');
-
+     @extend %row-default;
+    @include mq(medium) {
+      @include fbx-setting(row);
+      justify-content: space-around;
+    }
   }
 
   // .grid__col
   &__col {
-
     // create grid columns dynamically
     // loop through each column size
     @for $i from 1 through 12 {
@@ -29,14 +29,18 @@
       // concatenate CSS selector, ie when $i = 1,
       // selector would be .grid__col--1
       &--#{$i} {
-
         // base styles applied to all grid columns
         // NOTE: could be converted to a placeholder, along with margin
         // from the  media query
-
-
+        @extend %col-default;
         // NOTE: replace with media query mixin if aiming for exceeds
-       @include flexcol('large',$i);
+        @include mq(medium) {
+          // base stlyes applied to all grid columns
+          margin-top: 0;
+          // make column width a percentage of the column number / total columns
+          flex-basis: col-basis($i,12);
+        }
+
       }
     }
   }
@@ -46,53 +50,52 @@
 [class^=grid__col] {
   // grid__col + grid__col, targets two sibling columns
   & + & {
-
     // NOTE: replace with media query mixin if aiming for exceeds
-    @media (min-width: 480px) {
-
+    @include mq(medium) {
       // add grid gutter
       margin-left: 10px;
     }
   }
 }
-.grid__col--12.theme__colors {
-  @include gridcol-styling($color-gridcol-12);
-}
-.grid__col--6.theme__colors {
-  @include gridcol-styling($color-gridcol-6);
-}
-.grid__col--4.theme__colors {
-  @include gridcol-styling($color-gridcol-4);
-}
-.grid__col--3.theme__colors {
-   @include gridcol-styling($color-gridcol-3);
-}
-.grid__col--5.theme__colors {
-  @include gridcol-styling($color-gridcol-5);
-}
-.grid__col--7.theme__colors {
-  @include gridcol-styling($color-gridcol-7);
-}
-.grid__col--8.theme__colors {
-  @include gridcol-styling($color-gridcol-8);
-}
-.grid__col--4.theme__colors {
-  @include gridcol-styling($color-gridcol-4);
-}
 
-.centered {
-   margin: 0 auto;
-}
-
-
+// arange buttons on column 12
 .grid__col--12 {
-  display: flex;
-  flex-direction: column;
-  @media (min-width: 480px) {
-    flex-direction: row;
+  @include fbx-setting(column);
+  @include mq(medium){
+    @include fbx-setting(row);
     justify-content: space-around;
     button {
-      @include flexbut(5);
+      margin-left: 10px;
+      flex-basis: col-basis(1,5);
     }
+  }
+}
+
+//give colors to grid columns
+
+.grid__col {
+  &--12.theme__colors {
+    @include gridcol-styling($color-gridcol-12);
+  }
+  &--6.theme__colors {
+    @include gridcol-styling($color-gridcol-6);
+  }
+  &--4.theme__colors {
+    @include gridcol-styling($color-gridcol-4);
+  }
+  &--3.theme__colors {
+     @include gridcol-styling($color-gridcol-3);
+  }
+  &--5.theme__colors {
+    @include gridcol-styling($color-gridcol-5);
+  }
+  &--7.theme__colors {
+    @include gridcol-styling($color-gridcol-7);
+  }
+  &--8.theme__colors {
+    @include gridcol-styling($color-gridcol-8);
+  }
+  &--4.theme__colors {
+    @include gridcol-styling($color-gridcol-4);
   }
 }

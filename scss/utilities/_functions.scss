@@ -1,0 +1,4 @@
+//culculation flex basis  use display col number /total col number %
+@function col-basis ($dis-col-number, $tol-col-number){
+    @return   $dis-col-number / $tol-col-number * 100%;
+}

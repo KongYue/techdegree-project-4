@@ -1,9 +1,13 @@
-.img--frame {
-  padding: 11px;
-  border:solid 1px lightgrey;
-}
-.img--avatar {
-height: 100%;
-margin: 0 auto;
 
+
+.img {
+  &--avatar {
+    @extend %img;
+  }
+  &--frame {
+    @extend %img;
+
+    padding: 11px;
+    border:solid 1px lightgrey;
+  }
 }

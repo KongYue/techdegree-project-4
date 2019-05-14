@@ -1,16 +1,13 @@
 .form {
-  display: flex;
-  flex-direction: column;
+  @include fbx-setting(column);
   height: auto;
-
-
   &__label--hidden {
-  display: none;
-}
+    display: none;
+  }
   &__input {
-   border:none;
-   border-bottom: solid 4px $color-marine;
-   margin-top: 18px;
-}
+    border:none;
+    border-bottom: solid 4px $color-marine;
+    margin-top: 18px;
+  }
 
 }

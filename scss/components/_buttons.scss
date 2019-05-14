@@ -1,7 +1,4 @@
-%btn {
-  margin-top: 10px;
 
-}
 .btn {
   &--default{
     @extend %btn;
