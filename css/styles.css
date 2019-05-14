@@ -609,6 +609,7 @@ ul {
 }
 
 .img--frame {
+  width: 100%;
   padding: 11px;
   border: solid 1px lightgrey;
 }
